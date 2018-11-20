@@ -1,0 +1,9 @@
+API version 1 has two methods: "statistics" and "metrics".
+They return similar information, but "metrics" is more limited.
+"metrics" is using text format of Prometheus (https://prometheus.io/docs/instrumenting/exposition_formats/) and can be used to create nice looking dashboards with Grafana (https://grafana.com).
+"statistics" returns data in JSON format.
+You can use your web browser for getting API data, for example: http://127.0.0.1:5008/metrics if you started mkxminer with "--api 5008" parameter.
+For developers: it is also possible to get the same API data via raw TCP, just send "statistics" or "metrics" to API port.
+
+Only these two read-only API endpoints are currently exposed.
+Use your router to limit API traffic to only approved (local) hosts.
